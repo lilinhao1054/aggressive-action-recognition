@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.sqlite"
+}
+
+model Device {
+  id         Int      @id @default(autoincrement())
+  name       String
+  username   String
+  password   String
+  ip         String
+  addr       String
+  enable     Boolean  @default(true)
+  createTime DateTime
+  logs       Log[]
+}
+
+model Log {
+  id       Int      @id @default(autoincrement())
+  time     DateTime
+  level    Int
+  device   Device   @relation(fields: [deviceId], references: [id])
+  deviceId Int
+  feature  String
+}
