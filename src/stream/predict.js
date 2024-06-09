@@ -21,7 +21,7 @@ async function predictWrapper(path, socket, id) {
           time: dayjs(),
           level: pred,
           deviceId: id,
-          feature: 'todo'
+          feature: '0010100111101010100011011'
         }
       })
   } catch (e) {
