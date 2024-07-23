@@ -7,7 +7,10 @@ const logger = require("../logger");
 
 const prisma = new PrismaClient();
 
+const warnArr = [];
+
 async function predictWrapper(path, socket, id) {
+  warnArr[id] || (warnArr[id] = 0);
   try {
     const time = dayjs().format('HH:mm:ss');
     const t1 = Date.now();
@@ -15,6 +18,13 @@ async function predictWrapper(path, socket, id) {
     const t2 = Date.now();
     logger.info(`predict consume ${t2 - t1} ms`)
     socket.emit(`pred${id}`, { pred, time, move });
+
+    pred === 3 ? (warnArr[id]++) : (warnArr[id] = 0);
+    if (warnArr[id] === 3) {
+      warnArr[id] = 0;
+      socket.emit('warn', { id });
+    }
+    
     if (pred !== 0)
       await prisma.log.create({
         data: {

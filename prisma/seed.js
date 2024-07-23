@@ -3,6 +3,13 @@ const dayjs = require('dayjs')
 
 const prisma = new PrismaClient()
 
+const today = dayjs().format('YYYY-MM-DD');
+const n1day = dayjs().subtract(1, 'day').format('YYYY-MM-DD');
+const n2day = dayjs().subtract(2, 'day').format('YYYY-MM-DD');
+const n3day = dayjs().subtract(3, 'day').format('YYYY-MM-DD');
+const n4day = dayjs().subtract(4, 'day').format('YYYY-MM-DD');
+const n5day = dayjs().subtract(5, 'day').format('YYYY-MM-DD');
+
 const deviceData = [
   {
     name: "DaHua1",
@@ -14,132 +21,132 @@ const deviceData = [
     logs: {
       create: [
         {
-          time: dayjs("2024-05-29 17:07:24"),
+          time: dayjs(`${n5day} 17:07:24`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-29 17:07:29"),
-          level: 2,
-          feature: '0010100111101010100011011'
-        },
-
-        {
-          time: dayjs("2024-05-30 17:07:24"),
+          time: dayjs(`${n5day} 17:07:29`),
           level: 2,
           feature: '0010100111101010100011011'
         },
 
         {
-          time: dayjs("2024-05-31 17:07:24"),
+          time: dayjs(`${n4day} 17:07:24`),
+          level: 2,
+          feature: '0010100111101010100011011'
+        },
+
+        {
+          time: dayjs(`${n3day} 17:07:24`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-31 17:07:29"),
+          time: dayjs(`${n3day} 17:07:29`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-31 17:07:34"),
+          time: dayjs(`${n3day} 17:07:34`),
           level: 3,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-31 17:07:39"),
+          time: dayjs(`${n3day} 17:07:39`),
           level: 2,
           feature: '0010100111101010100011011'
         },
 
         {
-          time: dayjs("2024-06-01 17:07:14"),
+          time: dayjs(`${n2day} 17:07:14`),
           level: 1,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-01 17:07:19"),
+          time: dayjs(`${n2day} 17:07:19`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-01 17:07:24"),
+          time: dayjs(`${n2day} 17:07:24`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-01 17:07:29"),
+          time: dayjs(`${n2day} 17:07:29`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-01 17:07:34"),
+          time: dayjs(`${n2day} 17:07:34`),
           level: 3,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-01 17:07:39"),
+          time: dayjs(`${n2day} 17:07:39`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-01 17:07:44"),
+          time: dayjs(`${n2day} 17:07:44`),
           level: 3,
           feature: '0010100111101010100011011'
         },
 
         {
-          time: dayjs("2024-06-02 17:07:19"),
+          time: dayjs(`${n1day} 17:07:19`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-02 17:07:24"),
+          time: dayjs(`${n1day} 17:07:24`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-02 17:07:29"),
+          time: dayjs(`${n1day} 17:07:29`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-02 17:07:34"),
+          time: dayjs(`${n1day} 17:07:34`),
           level: 3,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-02 17:07:39"),
+          time: dayjs(`${n1day} 17:07:39`),
           level: 2,
           feature: '0010100111101010100011011'
         },
 
         {
-          time: dayjs("2024-06-03 17:07:14"),
+          time: dayjs(`${today} 17:07:14`),
           level: 1,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-03 17:07:19"),
+          time: dayjs(`${today} 17:07:19`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-03 17:07:24"),
+          time: dayjs(`${today} 17:07:24`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-03 17:07:29"),
+          time: dayjs(`${today} 17:07:29`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-03 17:07:34"),
+          time: dayjs(`${today} 17:07:34`),
           level: 3,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-03 17:07:39"),
+          time: dayjs(`${today} 17:07:39`),
           level: 2,
           feature: '0010100111101010100011011'
         },
@@ -156,137 +163,137 @@ const deviceData = [
     logs: {
       create: [
         {
-          time: dayjs("2024-05-29 17:07:24"),
+          time: dayjs(`${n5day} 17:07:24`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-29 17:07:29"),
+          time: dayjs(`${n5day} 17:07:29`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-29 17:07:34"),
+          time: dayjs(`${n5day} 17:07:34`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-29 17:07:39"),
+          time: dayjs(`${n5day} 17:07:39`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-29 17:07:44"),
+          time: dayjs(`${n5day} 17:07:44`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-29 17:07:49"),
-          level: 2,
-          feature: '0010100111101010100011011'
-        },
-
-        {
-          time: dayjs("2024-05-30 17:07:24"),
-          level: 2,
-          feature: '0010100111101010100011011'
-        },
-        {
-          time: dayjs("2024-05-30 17:07:29"),
-          level: 2,
-          feature: '0010100111101010100011011'
-        },
-        {
-          time: dayjs("2024-05-30 17:07:34"),
-          level: 2,
-          feature: '0010100111101010100011011'
-        },
-        {
-          time: dayjs("2024-05-30 17:07:39"),
-          level: 2,
-          feature: '0010100111101010100011011'
-        },
-        {
-          time: dayjs("2024-05-30 17:07:44"),
-          level: 2,
-          feature: '0010100111101010100011011'
-        },
-        {
-          time: dayjs("2024-05-30 17:07:49"),
+          time: dayjs(`${n5day} 17:07:49`),
           level: 2,
           feature: '0010100111101010100011011'
         },
 
         {
-          time: dayjs("2024-05-31 17:07:34"),
+          time: dayjs(`${n4day} 17:07:24`),
+          level: 2,
+          feature: '0010100111101010100011011'
+        },
+        {
+          time: dayjs(`${n4day} 17:07:29`),
+          level: 2,
+          feature: '0010100111101010100011011'
+        },
+        {
+          time: dayjs(`${n4day} 17:07:34`),
+          level: 2,
+          feature: '0010100111101010100011011'
+        },
+        {
+          time: dayjs(`${n4day} 17:07:39`),
+          level: 2,
+          feature: '0010100111101010100011011'
+        },
+        {
+          time: dayjs(`${n4day} 17:07:44`),
+          level: 2,
+          feature: '0010100111101010100011011'
+        },
+        {
+          time: dayjs(`${n4day} 17:07:49`),
+          level: 2,
+          feature: '0010100111101010100011011'
+        },
+
+        {
+          time: dayjs(`${n3day} 17:07:34`),
           level: 3,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-31 17:07:39"),
+          time: dayjs(`${n3day} 17:07:39`),
           level: 2,
           feature: '0010100111101010100011011'
         },
 
         {
-          time: dayjs("2024-06-01 17:07:29"),
+          time: dayjs(`${n2day} 17:07:29`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-01 17:07:34"),
+          time: dayjs(`${n2day} 17:07:34`),
           level: 3,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-01 17:07:39"),
+          time: dayjs(`${n2day} 17:07:39`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-01 17:07:44"),
+          time: dayjs(`${n2day} 17:07:44`),
           level: 3,
           feature: '0010100111101010100011011'
         },
 
         {
-          time: dayjs("2024-06-02 17:07:19"),
+          time: dayjs(`${n1day} 17:07:19`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-02 17:07:29"),
+          time: dayjs(`${n1day} 17:07:29`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-02 17:07:34"),
+          time: dayjs(`${n1day} 17:07:34`),
           level: 3,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-02 17:07:39"),
+          time: dayjs(`${n1day} 17:07:39`),
           level: 2,
           feature: '0010100111101010100011011'
         },
 
         {
-          time: dayjs("2024-06-03 17:07:14"),
+          time: dayjs(`${today} 17:07:14`),
           level: 1,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-03 17:07:19"),
+          time: dayjs(`${today} 17:07:19`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-03 17:07:24"),
+          time: dayjs(`${today} 17:07:24`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-03 17:07:29"),
+          time: dayjs(`${today} 17:07:29`),
           level: 2,
           feature: '0010100111101010100011011'
         },
@@ -303,148 +310,148 @@ const deviceData = [
     logs: {
       create: [
         {
-          time: dayjs("2024-05-29 17:07:24"),
+          time: dayjs(`${n5day} 17:07:24`),
           level: 2,
           feature: '0010100111101010100011011'
         },
 
         {
-          time: dayjs("2024-05-30 17:07:24"),
+          time: dayjs(`${n4day} 17:07:24`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-30 17:07:29"),
+          time: dayjs(`${n4day} 17:07:29`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-30 17:07:34"),
+          time: dayjs(`${n4day} 17:07:34`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-30 17:07:39"),
+          time: dayjs(`${n4day} 17:07:39`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-30 17:07:44"),
+          time: dayjs(`${n4day} 17:07:44`),
           level: 2,
           feature: '0010100111101010100011011'
         },
 
         {
-          time: dayjs("2024-05-31 17:07:24"),
+          time: dayjs(`${n3day} 17:07:24`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-31 17:07:29"),
+          time: dayjs(`${n3day} 17:07:29`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-31 17:07:34"),
+          time: dayjs(`${n3day} 17:07:34`),
           level: 3,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-31 17:07:39"),
+          time: dayjs(`${n3day} 17:07:39`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-31 17:07:44"),
+          time: dayjs(`${n3day} 17:07:44`),
           level: 3,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-05-31 17:07:49"),
+          time: dayjs(`${n3day} 17:07:49`),
           level: 2,
           feature: '0010100111101010100011011'
         },
 
         {
-          time: dayjs("2024-06-01 17:07:14"),
+          time: dayjs(`${n2day} 17:07:14`),
           level: 1,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-01 17:07:19"),
+          time: dayjs(`${n2day} 17:07:19`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-01 17:07:24"),
+          time: dayjs(`${n2day} 17:07:24`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-01 17:07:29"),
+          time: dayjs(`${n2day} 17:07:29`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-01 17:07:34"),
+          time: dayjs(`${n2day} 17:07:34`),
           level: 3,
           feature: '0010100111101010100011011'
         },
 
         {
-          time: dayjs("2024-06-02 17:07:19"),
+          time: dayjs(`${n1day} 17:07:19`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-02 17:07:24"),
+          time: dayjs(`${n1day} 17:07:24`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-02 17:07:29"),
+          time: dayjs(`${n1day} 17:07:29`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-02 17:07:34"),
+          time: dayjs(`${n1day} 17:07:34`),
           level: 2,
           feature: '0010100111101010100011011'
         },
 
         {
-          time: dayjs("2024-06-02 17:07:34"),
+          time: dayjs(`${n1day} 17:07:34`),
           level: 3,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-02 17:07:39"),
+          time: dayjs(`${n1day} 17:07:39`),
           level: 2,
           feature: '0010100111101010100011011'
         },
 
         {
-          time: dayjs("2024-06-03 17:07:14"),
+          time: dayjs(`${today} 17:07:14`),
           level: 1,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-03 17:07:19"),
+          time: dayjs(`${today} 17:07:19`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-03 17:07:24"),
+          time: dayjs(`${today} 17:07:24`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-03 17:07:29"),
+          time: dayjs(`${today} 17:07:29`),
           level: 2,
           feature: '0010100111101010100011011'
         },
         {
-          time: dayjs("2024-06-03 17:07:34"),
+          time: dayjs(`${today} 17:07:34`),
           level: 3,
           feature: '0010100111101010100011011'
         },
