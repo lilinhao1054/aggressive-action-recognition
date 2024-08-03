@@ -1,4 +1,4 @@
-FROM node:18-alpine 
+FROM node:18
 
 # 暴露端口
 EXPOSE 3000
@@ -10,6 +10,10 @@ RUN mkdir -p /data/release/acr-server
 
 # 复制源码
 COPY . /data/release/acr-server
+
+RUN apt-get update
+RUN apt-get install ffmpeg -y
+
 
 RUN npm install pm2 -g
 
